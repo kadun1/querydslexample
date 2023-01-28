@@ -1,13 +1,16 @@
 package querydsl;
 
 import com.mysema.query.jpa.impl.JPAQuery;
+import querydsl.domain.Item;
+import querydsl.domain.Member;
+import querydsl.domain.QItem;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import java.util.List;
-import static querydsl.QMember.member;
+import static querydsl.domain.QMember.member; //기본 인스턴스
 
 public class QueryDSLMain {
 
@@ -39,5 +42,10 @@ public class QueryDSLMain {
         for (Member findMember : findMembers) {
             System.out.println("member1 = " + member1.getAge());
         }
+
+        QItem item = QItem.item;
+        List<Item> findList = query.from(item)
+                .where(item.name.eq("좋은상품").and(item.price.gt(20000)))
+                .list(item);
     }
 }

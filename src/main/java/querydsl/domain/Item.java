@@ -1,19 +1,18 @@
-package querydsl;
+package querydsl.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class Member {
+public class Item {
 
-    @Id
-    @GeneratedValue
+    @Id @GeneratedValue
     private Long id;
 
     private String name;
 
-    private int age;
+    private int price;
 
     public String getName() {
         return name;
@@ -23,11 +22,11 @@ public class Member {
         this.name = name;
     }
 
-    public int getAge() {
-        return age;
+    public int getPrice() {
+        return price;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setPrice(int price) {
+        this.price = price;
     }
 }

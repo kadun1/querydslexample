@@ -14,6 +14,16 @@ public class Item {
 
     private int price;
 
+    private int stockQuantity;
+
+    public int getStockQuantity() {
+        return stockQuantity;
+    }
+
+    public void setStockQuantity(int stockQuantity) {
+        this.stockQuantity = stockQuantity;
+    }
+
     public String getName() {
         return name;
     }

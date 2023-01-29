@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="32773b2e-9007-40ea-8efc-3b54896335a4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/querydsl/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/querydsl/domain/Member.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/querydsl/QueryDSLMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/querydsl/QueryDSLMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/querydsl/domain/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/querydsl/domain/Item.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +54,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/02WorkSpaces/querydslexample/src/main/resources",
+    "last_opened_file_path": "C:/02WorkSpaces/querydslexample",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "File.Encoding"
   }
@@ -91,7 +92,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1674913073011</updated>
-      <workItem from="1674913074425" duration="3416000" />
+      <workItem from="1674913074425" duration="3860000" />
+      <workItem from="1675001156571" duration="775000" />
     </task>
     <servers />
   </component>

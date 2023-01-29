@@ -1,5 +1,7 @@
 package querydsl;
 
+import com.mysema.query.QueryModifiers;
+import com.mysema.query.SearchResults;
 import com.mysema.query.jpa.impl.JPAQuery;
 import querydsl.domain.Item;
 import querydsl.domain.Member;
@@ -44,8 +46,25 @@ public class QueryDSLMain {
         }
 
         QItem item = QItem.item;
-        List<Item> findList = query.from(item)
-                .where(item.name.eq("좋은상품").and(item.price.gt(20000)))
-                .list(item);
+
+        SearchResults<Item> result = query.from(item)
+                .where(item.price.gt(20000))
+                .orderBy(item.price.desc(), item.stockQuantity.asc())
+                .offset(10).limit(20)
+                .listResults(item);
+
+        long total = result.getTotal();
+        long limit = result.getLimit();
+        long offset = result.getOffset();
+        List<Item> results = result.getResults();
+
+        System.out.println(total +" "+ limit +" "+ offset);
+
+//        QueryModifiers queryModifiers = new QueryModifiers(20L, 10L);
+//        List<Item> list = query.from(item)
+//                .restrict(queryModifiers)
+//                .list(item);
+
+
     }
 }

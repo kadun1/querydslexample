@@ -1,5 +1,6 @@
 package querydsl;
 
+import com.mysema.query.jpa.JPASubQuery;
 import com.mysema.query.jpa.impl.JPAQuery;
 import querydsl.domain.*;
 
@@ -62,33 +63,52 @@ public class QueryDSLMain {
 
         //그룹함수 사용
         query.from(item)
-                .groupBy(item.price)
-                .having(item.price.gt(1000))
-                .list(item);
+            .groupBy(item.price)
+            .having(item.price.gt(1000))
+            .list(item);
 
         QOrder order = QOrder.order;
         QOrderItem orderItem = QOrderItem.orderItem;
 
         query.from(order)
-                .join(order.member, member)
-                .leftJoin(order.orderItems, orderItem)
-                .list(order);
+            .join(order.member, member)
+            .leftJoin(order.orderItems, orderItem)
+            .list(order);
 
         //join 조건을 거는 on절
         query.from(order)
-                .leftJoin(order.orderItems, orderItem)
-                .on(orderItem.count.gt(2))
-                .list(order);
+            .leftJoin(order.orderItems, orderItem)
+            .on(orderItem.count.gt(2))
+            .list(order);
 
         //fetch join
         query.from(order)
-                .innerJoin(order.member, member).fetch()
-                .leftJoin(order.orderItems, orderItem).fetch()
-                .list(order);
+            .innerJoin(order.member, member).fetch()
+            .leftJoin(order.orderItems, orderItem).fetch()
+            .list(order);
 
         query.from(order, member)
-                .where(order.member.eq(member))
-                .list(order);
+            .where(order.member.eq(member))
+            .list(order);
+
+
+        //Sub Query
+        QItem itemSub = new QItem("itemSub");
+
+        query.from(item)
+            .where(item.price.eq( //eq
+                new JPASubQuery().from(itemSub).unique(itemSub.price.max())
+            ))
+            .list(item);
+
+        //Sub Query2
+        query.from(item)
+            .where(item.in( //in
+                new JPASubQuery().from(itemSub)
+                    .where(item.name.eq(itemSub.name))
+                    .list(itemSub)
+            ))
+            .list(item);
 
         tx.commit();
     }

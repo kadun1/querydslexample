@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="32773b2e-9007-40ea-8efc-3b54896335a4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/querydsl/domain/OrderItem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/querydsl/QueryDSLMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/querydsl/QueryDSLMain.java" afterDir="false" />
     </list>
@@ -96,7 +95,7 @@
       <option name="presentableId" value="Default" />
       <updated>1674913073011</updated>
       <workItem from="1674913074425" duration="3860000" />
-      <workItem from="1675001156571" duration="2310000" />
+      <workItem from="1675001156571" duration="3027000" />
     </task>
     <servers />
   </component>

@@ -1,8 +1,13 @@
 package querydsl;
 
+import com.mysema.query.Tuple;
 import com.mysema.query.jpa.JPASubQuery;
+import com.mysema.query.jpa.impl.JPADeleteClause;
 import com.mysema.query.jpa.impl.JPAQuery;
+import com.mysema.query.jpa.impl.JPAUpdateClause;
+import com.mysema.query.types.Projections;
 import querydsl.domain.*;
+import querydsl.dto.ItemDTO;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -62,10 +67,10 @@ public class QueryDSLMain {
 //                .list(item);
 
         //그룹함수 사용
-        query.from(item)
-            .groupBy(item.price)
-            .having(item.price.gt(1000))
-            .list(item);
+//        query.from(item)
+//            .groupBy(item.price)
+//            .having(item.price.gt(1000))
+//            .list(item);
 
         QOrder order = QOrder.order;
         QOrderItem orderItem = QOrderItem.orderItem;
@@ -76,39 +81,77 @@ public class QueryDSLMain {
             .list(order);
 
         //join 조건을 거는 on절
-        query.from(order)
-            .leftJoin(order.orderItems, orderItem)
-            .on(orderItem.count.gt(2))
-            .list(order);
-
-        //fetch join
-        query.from(order)
-            .innerJoin(order.member, member).fetch()
-            .leftJoin(order.orderItems, orderItem).fetch()
-            .list(order);
-
-        query.from(order, member)
-            .where(order.member.eq(member))
-            .list(order);
+//        query.from(order)
+//            .leftJoin(order.orderItems, orderItem)
+//            .on(orderItem.count.gt(2))
+//            .list(order);
+//
+//        //fetch join
+//        query.from(order)
+//            .innerJoin(order.member, member).fetch()
+//            .leftJoin(order.orderItems, orderItem).fetch()
+//            .list(order);
+//
+//        query.from(order, member)
+//            .where(order.member.eq(member))
+//            .list(order);
 
 
         //Sub Query
         QItem itemSub = new QItem("itemSub");
 
-        query.from(item)
-            .where(item.price.eq( //eq
-                new JPASubQuery().from(itemSub).unique(itemSub.price.max())
-            ))
-            .list(item);
+//        query.from(item)
+//            .where(item.price.eq( //eq
+//                new JPASubQuery().from(itemSub).unique(itemSub.price.max())
+//            ))
+//            .list(item);
 
         //Sub Query2
-        query.from(item)
-            .where(item.in( //in
-                new JPASubQuery().from(itemSub)
-                    .where(item.name.eq(itemSub.name))
-                    .list(itemSub)
-            ))
-            .list(item);
+//        query.from(item)
+//            .where(item.in( //in
+//                new JPASubQuery().from(itemSub)
+//                    .where(item.name.eq(itemSub.name))
+//                    .list(itemSub)
+//            ))
+//            .list(item);
+
+        //프로젝션 대상이 하나
+//        List<String> result = query.from(item).list(item.name);
+//        for (String name : result) {
+//            System.out.println("name!! = " + name);
+//        }
+
+        //프로젝션 대상이 여럿
+//        List<Tuple> result = query.from(item).list(item.name, item.price);
+//        for (Tuple tuple : result) {
+//            System.out.println("name = " + tuple.get(item.name));
+//            System.out.println("price = " + tuple.get(item.price));
+//        }
+
+        //Projections 사용(setter)
+//        List<ItemDTO> result = query.from(item).list(
+//                Projections.bean(ItemDTO.class, item.name.as("username"), item.price)); //entity와 dto의 이름이 다르면 as 를 준다 (ex:name -> username)
+
+
+        //Projections 사용(field)
+//        List<ItemDTO> result = query.from(item).list(
+//                Projections.fields(ItemDTO.class, item.name.as("username"), item.price));
+
+        //Projections 사용(constructor)
+//        List<ItemDTO> result = query.from(item).list(
+//                Projections.constructor(ItemDTO.class, item.name, item.price));
+
+        //update
+//        JPAUpdateClause updateClause = new JPAUpdateClause(em, item);
+//        long count = updateClause.where(item.name.eq("시골개발자의 JPA 책"))
+//                .set(item.price, item.price.add(100))
+//                .execute();
+
+        //delete
+        JPADeleteClause deleteClause = new JPADeleteClause(em, item);
+        long count = deleteClause.where(item.name.eq("시골개발자의 JPA 책"))
+                .execute();
+
 
         tx.commit();
     }

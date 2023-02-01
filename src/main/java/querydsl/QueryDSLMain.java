@@ -152,7 +152,6 @@ public class QueryDSLMain {
         long count = deleteClause.where(item.name.eq("시골개발자의 JPA 책"))
                 .execute();
 
-
         tx.commit();
     }
 }

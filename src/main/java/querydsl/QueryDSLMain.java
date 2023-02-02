@@ -11,10 +11,8 @@ import com.mysema.query.types.Projections;
 import querydsl.domain.*;
 import querydsl.dto.ItemDTO;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.EntityTransaction;
-import javax.persistence.Persistence;
+import javax.persistence.*;
+import java.math.BigInteger;
 import java.util.List;
 import static querydsl.domain.QMember.member; //기본 인스턴스
 
@@ -156,7 +154,41 @@ public class QueryDSLMain {
 //
 //        System.out.println("count = " + count);
 
-        BooleanBuilder builder = new BooleanBuilder();
+        //native query
+//        BooleanBuilder builder = new BooleanBuilder();
+//
+//        String sql = "SELECT ID, AGE, NAME, TEAM_ID " +
+//                "FROM MEMBER WHERE AGE > ?";
+//
+//        Query nativeQuery = em.createNativeQuery(sql, Member.class)
+//                        .setParameter(1, 20);
+
+//        List resultList = nativeQuery.getResultList();
+
+        //native query : resultSet mapping
+//        String sql = "SELECT M.ID, AGE, NAME, TEAM_ID, I.ORDER_COUNT " +
+//                "FROM MEMBER M " +
+//                "   (SELECT IM.ID, COUNT(*) AS ORDER_COUNT " +
+//                "   FROM ORDERS O, MEMBER IM " +
+//                "   WHERE O.MEMBER_ID = IM.ID) I " +
+//                "ON M.ID = I.ID";
+//
+//        Query nativeQuery = em.createNativeQuery(sql, "memberWithOrderCount");
+//
+//        List<Object []> resultList = nativeQuery.getResultList();
+//        for (Object[] row : resultList) {
+//            Member member2 = (Member) row[0];
+//            BigInteger orderCount = (BigInteger) row[1];
+//
+//            System.out.println("member2 = " + member2);
+//            System.out.println("orderCount = " + orderCount);
+//        }
+
+        //named native query(엔티티에 @NameNativeQuery만 사용)
+//        TypedQuery<Member> nativeQuery = em.createNamedQuery("Member.memberSQL", Member.class)
+//                .setParameter(1, 20);
+
+        //named native query result mapping
 
 
         tx.commit();

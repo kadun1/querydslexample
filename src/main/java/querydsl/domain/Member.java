@@ -1,10 +1,18 @@
 package querydsl.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@SqlResultSetMapping(name = "memberWithOrderCount",
+    entities = {@EntityResult(entityClass = Member.class)},
+    columns = {@ColumnResult(name = "ORDER_COUNT")}
+)
+@NamedNativeQuery(
+        name = "Member.memberSQL",
+        query = "SELECT ID, AGE, NAME, TEAM_ID " +
+                "FROM MEMBER WHERE AGE > ?",
+        resultClass = Member.class
+)
 public class Member {
 
     @Id

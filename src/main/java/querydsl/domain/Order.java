@@ -5,6 +5,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@SqlResultSetMapping(name = "OrderResults",
+    entities = {
+        @EntityResult(entityClass = Order.class, fields = {
+                @FieldResult(name = "id", column = "order_id"),
+                @FieldResult(name = "quantity", column = "order_quantity"),
+                @FieldResult(name = "item", column = "order_item")})},
+        columns = {
+        @ColumnResult(name = "item_name")}
+)
 @Table(name = "orders")
 public class Order {
 

@@ -1,5 +1,7 @@
 package querydsl;
 
+import com.mysema.codegen.StringUtils;
+import com.mysema.query.BooleanBuilder;
 import com.mysema.query.Tuple;
 import com.mysema.query.jpa.JPASubQuery;
 import com.mysema.query.jpa.impl.JPADeleteClause;
@@ -38,14 +40,14 @@ public class QueryDSLMain {
         /**
          * static import도 가능
          */
-        List<Member> findMembers = query.from(member)
-                .where(member.name.eq("회원1"))
-                .orderBy(member.name.desc())
-                .list(member);
-
-        for (Member findMember : findMembers) {
-            System.out.println("member1 = " + member1.getAge());
-        }
+//        List<Member> findMembers = query.from(member)
+//                .where(member.name.eq("회원1"))
+//                .orderBy(member.name.desc())
+//                .list(member);
+//
+//        for (Member findMember : findMembers) {
+//            System.out.println("member1 = " + member1.getAge());
+//        }
 
         QItem item = QItem.item;
 
@@ -72,13 +74,13 @@ public class QueryDSLMain {
 //            .having(item.price.gt(1000))
 //            .list(item);
 
-        QOrder order = QOrder.order;
-        QOrderItem orderItem = QOrderItem.orderItem;
-
-        query.from(order)
-            .join(order.member, member)
-            .leftJoin(order.orderItems, orderItem)
-            .list(order);
+//        QOrder order = QOrder.order;
+//        QOrderItem orderItem = QOrderItem.orderItem;
+//
+//        query.from(order)
+//            .join(order.member, member)
+//            .leftJoin(order.orderItems, orderItem)
+//            .list(order);
 
         //join 조건을 거는 on절
 //        query.from(order)
@@ -98,7 +100,7 @@ public class QueryDSLMain {
 
 
         //Sub Query
-        QItem itemSub = new QItem("itemSub");
+//        QItem itemSub = new QItem("itemSub");
 
 //        query.from(item)
 //            .where(item.price.eq( //eq
@@ -148,11 +150,15 @@ public class QueryDSLMain {
 //                .execute();
 
         //delete
-        JPADeleteClause deleteClause = new JPADeleteClause(em, item);
-        long count = deleteClause.where(item.name.eq("시골개발자의 JPA 책"))
-                .execute();
+//        JPADeleteClause deleteClause = new JPADeleteClause(em, item);
+//        long count = deleteClause.where(item.name.eq("시골개발자의 JPA 책"))
+//                .execute();
+//
+//        System.out.println("count = " + count);
 
-        System.out.println("count = " + count);
+        BooleanBuilder builder = new BooleanBuilder();
+
+
         tx.commit();
     }
 }

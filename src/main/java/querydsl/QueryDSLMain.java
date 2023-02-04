@@ -14,7 +14,6 @@ import querydsl.dto.ItemDTO;
 import javax.persistence.*;
 import java.math.BigInteger;
 import java.util.List;
-import static querydsl.domain.QMember.member; //기본 인스턴스
 
 public class QueryDSLMain {
 
@@ -47,7 +46,7 @@ public class QueryDSLMain {
 //            System.out.println("member1 = " + member1.getAge());
 //        }
 
-        QItem item = QItem.item;
+//        QItem item = QItem.item;
 
 //        SearchResults<Item> result = query.from(item)
 //                .where(item.price.gt(20000))

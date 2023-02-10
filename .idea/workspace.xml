@@ -7,7 +7,6 @@
     <list default="true" id="32773b2e-9007-40ea-8efc-3b54896335a4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/querydsl/ItemExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/querydsl/ItemExpression.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/querydsl/QueryDSLMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/querydsl/QueryDSLMain.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +62,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "terminal",
+    "settings.editor.selected.configurable": "GrepConsole",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -112,7 +111,9 @@
       <workItem from="1675481562399" duration="560000" />
       <workItem from="1675528186212" duration="551000" />
       <workItem from="1675528747620" duration="203000" />
-      <workItem from="1675528959540" duration="1239000" />
+      <workItem from="1675528959540" duration="1575000" />
+      <workItem from="1675582331412" duration="2551000" />
+      <workItem from="1675766227922" duration="601000" />
     </task>
     <servers />
   </component>

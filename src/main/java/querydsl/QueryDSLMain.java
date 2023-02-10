@@ -189,7 +189,6 @@ public class QueryDSLMain {
 
         //named native query result mapping
 
-
         tx.commit();
     }
 }

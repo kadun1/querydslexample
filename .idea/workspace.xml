@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="32773b2e-9007-40ea-8efc-3b54896335a4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/querydsl/ItemExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/querydsl/ItemExpression.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +52,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/WorkSpaces/querydslexample",
+    "last_opened_file_path": "D:/WorkSpaces/Commisions",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -114,6 +113,7 @@
       <workItem from="1675528959540" duration="1575000" />
       <workItem from="1675582331412" duration="2551000" />
       <workItem from="1675766227922" duration="601000" />
+      <workItem from="1676039165894" duration="960000" />
     </task>
     <servers />
   </component>

@@ -184,8 +184,8 @@ public class QueryDSLMain {
 //        }
 
         //named native query(엔티티에 @NameNativeQuery만 사용)
-//        TypedQuery<Member> nativeQuery = em.createNamedQuery("Member.memberSQL", Member.class)
-//                .setParameter(1, 20);
+        TypedQuery<Member> nativeQuery = em.createNamedQuery("Member.memberSQL", Member.class)
+                .setParameter(1, 20);
 
         //named native query result mapping
 

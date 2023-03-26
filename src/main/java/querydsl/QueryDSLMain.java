@@ -165,12 +165,12 @@ public class QueryDSLMain {
 //        List resultList = nativeQuery.getResultList();
 
         //native query : resultSet mapping
-//        String sql = "SELECT M.ID, AGE, NAME, TEAM_ID, I.ORDER_COUNT " +
-//                "FROM MEMBER M " +
-//                "   (SELECT IM.ID, COUNT(*) AS ORDER_COUNT " +
-//                "   FROM ORDERS O, MEMBER IM " +
-//                "   WHERE O.MEMBER_ID = IM.ID) I " +
-//                "ON M.ID = I.ID";
+        String sql = "SELECT M.ID, AGE, NAME, TEAM_ID, I.ORDER_COUNT " +
+                "FROM MEMBER M " +
+                "   (SELECT IM.ID, COUNT(*) AS ORDER_COUNT " +
+                "   FROM ORDERS O, MEMBER IM " +
+                "   WHERE O.MEMBER_ID = IM.ID) I " +
+                "ON M.ID = I.ID";
 //
 //        Query nativeQuery = em.createNativeQuery(sql, "memberWithOrderCount");
 //

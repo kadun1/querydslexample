@@ -1,0 +1,53 @@
+
+[
+java:S1854»"?Remove this useless assignment to local variable "nativeQuery".(†¦Ãÿÿÿÿÿ
+S
+java:S1854¨"7Remove this useless assignment to local variable "sql".(ïÂù–úÿÿÿÿ
+O
+java:S1854!"9Remove this useless assignment to local variable "query".(¼ˆõì
+@
+java:S1481!"*Remove this unused "query" local variable.(¼ˆõì
+P	java:S125+"<This block of commented-out lines of code should be removed.(îÿëH
+V	java:S1251"<This block of commented-out lines of code should be removed.(öüÑşüÿÿÿÿ
+Q	java:S1257"<This block of commented-out lines of code should be removed.(­‘Ñ“
+Q	java:S125?"<This block of commented-out lines of code should be removed.(›Òèò
+V	java:S125H"<This block of commented-out lines of code should be removed.(ô­°‹øÿÿÿÿ
+V	java:S125J"<This block of commented-out lines of code should be removed.(›Üòúÿÿÿÿ
+V	java:S125V"<This block of commented-out lines of code should be removed.(ã±—Œÿÿÿÿÿ
+Q	java:S125d"<This block of commented-out lines of code should be removed.(Ãİƒ°
+V	java:S125j"<This block of commented-out lines of code should be removed.(ô­°‹øÿÿÿÿ
+V	java:S125s"<This block of commented-out lines of code should be removed.(ô­°‹øÿÿÿÿ
+Q	java:S125v"<This block of commented-out lines of code should be removed.(ãôö
+V	java:S125|"<This block of commented-out lines of code should be removed.(´®Ğúÿÿÿÿ
+R	java:S125‰"<This block of commented-out lines of code should be removed.(–É€è
+R	java:S125"<This block of commented-out lines of code should be removed.(“şªû
+Q	java:S125"<This block of commented-out lines of code should be removed.(È«ÅQ
+W	java:S125–"<This block of commented-out lines of code should be removed.(Ş¤İÒıÿÿÿÿ
+W	java:S125"<This block of commented-out lines of code should be removed.(Ôª™ûÿÿÿÿ
+W	java:S125¥"<This block of commented-out lines of code should be removed.(çç‘–ıÿÿÿÿ
+D
+java:S1481¨"(Remove this unused "sql" local variable.(ïÂù–úÿÿÿÿ
+R	java:S125¯"<This block of commented-out lines of code should be removed.(Ä›Ÿ
+L
+java:S1481»"0Remove this unused "nativeQuery" local variable.(†¦Ãÿÿÿÿÿ
+V
+java:S1128";Remove this unused import 'com.mysema.codegen.StringUtils'.(¨à¢âúÿÿÿÿ
+W
+java:S1128"<Remove this unused import 'com.mysema.query.BooleanBuilder'.(Ğú‡©ùÿÿÿÿ
+I
+java:S1128"3Remove this unused import 'com.mysema.query.Tuple'.(ûĞÌß
+S
+java:S1128"=Remove this unused import 'com.mysema.query.jpa.JPASubQuery'.(¶æâ‚
+\
+java:S1128"FRemove this unused import 'com.mysema.query.jpa.impl.JPADeleteClause'.(ÉÂ´ó
+a
+java:S1128	"FRemove this unused import 'com.mysema.query.jpa.impl.JPAUpdateClause'.(¬„­éúÿÿÿÿ
+U
+java:S1128
+"?Remove this unused import 'com.mysema.query.types.Projections'.(¢Ì­´
+G
+java:S1128"1Remove this unused import 'querydsl.dto.ItemDTO'.(úùõÛ
+G
+java:S1128"1Remove this unused import 'java.math.BigInteger'.(»Çâ€
+F
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ
